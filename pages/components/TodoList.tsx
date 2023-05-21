@@ -1,9 +1,8 @@
-import { Todo } from "@/utils/interface";
 import { deleteTodo, getAllTodos } from "@/utils/supabaseFunction";
 import React from "react";
 
 type Props = {
-    todos: Todo[];
+    todos: any;
     setTodos: React.Dispatch<any>;
 }
 
