@@ -17,16 +17,25 @@ const TodoList = (props: Props) => {
         let todos = await getAllTodos();
         setTodos(todos);
     }
+    console.log(todos);
+
 
     return (
         <div>
             <ul className="mx-auto">
-                {todos.map((todo) => (
-                    <div key={todo.id} className="flex bg-orange-200 rounded-md mt-2 mb-2 p-2 justify-between">
-                        <li>✅ {todo.title}</li>
-                        <span className="cursor-pointer" onClick={() => handleDelete(todo.id)}>&otimes;</span>
+                {todos.length !== 0 ? (
+                    <div>
+                        {todos.map((todo) => (
+                            <div key={todo.id} className="flex bg-orange-200 rounded-md mt-2 mb-2 p-2 justify-between">
+                                <li>✅ {todo.title}</li>
+                                <span className="cursor-pointer" onClick={() => handleDelete(todo.id)}>&otimes;</span>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                ) :
+                    (
+                        <div>No Data</div>
+                    )}
             </ul>
         </div>
     );
