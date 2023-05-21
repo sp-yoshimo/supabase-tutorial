@@ -1,4 +1,4 @@
-import { supabase } from "./pabase"
+import { supabase } from "../utils/supabase"
 
 export const getAllTodos = async () => {
     const todos = await supabase.from("Todo").select("*");
