@@ -24,7 +24,7 @@ const TodoList = (props: Props) => {
             <ul className="mx-auto">
                 {todos.length !== 0 ? (
                     <div>
-                        {todos.map((todo) => (
+                        {todos.map((todo: any) => (
                             <div key={todo.id} className="flex bg-orange-200 rounded-md mt-2 mb-2 p-2 justify-between">
                                 <li>✅ {todo.title}</li>
                                 <span className="cursor-pointer" onClick={() => handleDelete(todo.id)}>&otimes;</span>
