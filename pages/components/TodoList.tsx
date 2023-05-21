@@ -1,8 +1,9 @@
+import { Todo } from "@/utils/interface";
 import { deleteTodo, getAllTodos } from "@/utils/supabaseFunction";
 import React from "react";
 
 type Props = {
-    todos: any;
+    todos: Todo[];
     setTodos: React.Dispatch<any>;
 }
 
@@ -24,7 +25,7 @@ const TodoList = (props: Props) => {
             <ul className="mx-auto">
                 {todos.length !== 0 ? (
                     <div>
-                        {todos.map((todo: any) => (
+                        {todos.map((todo) => (
                             <div key={todo.id} className="flex bg-orange-200 rounded-md mt-2 mb-2 p-2 justify-between">
                                 <li>✅ {todo.title}</li>
                                 <span className="cursor-pointer" onClick={() => handleDelete(todo.id)}>&otimes;</span>
